@@ -32,7 +32,7 @@ const aboutBoxes = [
     {
         intro: "I am a...",
         title: "Entrepreneur",
-        description: "I'm on my journey to build a software company that will help people in need. Currently working on Loqi",
+        description: "I'm on my journey to build a software company that will help people in need. Currently working on Loqi, A platform leverages the latest technology to enhance your studying experience with personalized and interactive learning tools",
         bgColor: "#E3FFE3", // Light green
         introColor: "#3C9A3C", // Mid green
         titleColor: "#2A7A2A", // Dark green

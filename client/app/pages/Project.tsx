@@ -39,50 +39,63 @@ export const Project: React.FC = () => {
 
   useEffect(() => {
     const fetchRepos = async () => {
-      try {
-        const response = await fetch("https://api.github.com/users/tonybuii2003/repos");
-        const data = await response.json();
-
-        const enrichedRepos = await Promise.all(
-          data.map(async (repo: any) => {
-            // Fetch commit count for each repo
-            const commitResponse = await fetch(`https://api.github.com/repos/tonybuii2003/${repo.name}/commits?per_page=1`);
-            const commitData = await commitResponse.json();
-            const commitCount = commitResponse.headers.get("Link")?.includes('rel="last"')
-              ? parseInt(commitResponse.headers.get("Link")?.match(/&page=(\d+)>; rel="last"/)?.[1] || "0", 10)
-              : commitData.length;
-
-            return {
-              id: repo.id,
-              name: repo.name,
-              html_url: repo.html_url,
-              description: repo.description,
-              language: repo.language,
-              stargazers_count: repo.stargazers_count,
-              commit_count: commitCount,
-            };
-          })
-        );
-
-        // Sort repos by pinned status, then stars, then commit count
-        enrichedRepos.sort((a, b) => {
-          const isPinnedA = pinnedRepos.includes(a.name);
-          const isPinnedB = pinnedRepos.includes(b.name);
-
-          if (isPinnedA !== isPinnedB) {
-            return isPinnedA ? -1 : 1;
-          }
-          if (b.stargazers_count !== a.stargazers_count) {
-            return b.stargazers_count - a.stargazers_count;
-          }
-          return b.commit_count - a.commit_count;
-        });
-
-        setRepos(enrichedRepos);
-      } catch (error) {
-        console.error("Error fetching repos:", error);
-      }
-    };
+        try {
+          const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN; 
+          const response = await fetch("https://api.github.com/users/tonybuii2003/repos", {
+            headers: {
+              Authorization: `token ${token}`,
+            },
+          });
+          const data = await response.json();
+      
+          const enrichedRepos = await Promise.all(
+            data.map(async (repo: any) => {
+              // Fetch commit count for each repo
+              const commitResponse = await fetch(
+                `https://api.github.com/repos/tonybuii2003/${repo.name}/commits?per_page=1`,
+                {
+                  headers: {
+                    Authorization: `token ${token}`,
+                  },
+                }
+              );
+              const commitData = await commitResponse.json();
+              const commitCount = commitResponse.headers.get("Link")?.includes('rel="last"')
+                ? parseInt(commitResponse.headers.get("Link")?.match(/&page=(\d+)>; rel="last"/)?.[1] || "0", 10)
+                : commitData.length;
+      
+              return {
+                id: repo.id,
+                name: repo.name,
+                html_url: repo.html_url,
+                description: repo.description,
+                language: repo.language,
+                stargazers_count: repo.stargazers_count,
+                commit_count: commitCount,
+              };
+            })
+          );
+      
+          // Sort repos by pinned status, then stars, then commit count
+          enrichedRepos.sort((a, b) => {
+            const isPinnedA = pinnedRepos.includes(a.name);
+            const isPinnedB = pinnedRepos.includes(b.name);
+      
+            if (isPinnedA !== isPinnedB) {
+              return isPinnedA ? -1 : 1;
+            }
+            if (b.stargazers_count !== a.stargazers_count) {
+              return b.stargazers_count - a.stargazers_count;
+            }
+            return b.commit_count - a.commit_count;
+          });
+      
+          setRepos(enrichedRepos);
+        } catch (error) {
+          console.error("Error fetching repos:", error);
+        }
+      };
+      
     fetchRepos();
   }, []);
 

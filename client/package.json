@@ -14,7 +14,9 @@
     "next": "^15.0.2",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^5.3.0"
+    "react-icons": "^5.3.0",
+    "swipe": "^1.7.7",
+    "swiper": "^11.1.14"
   },
   "devDependencies": {
     "@types/node": "^20",
