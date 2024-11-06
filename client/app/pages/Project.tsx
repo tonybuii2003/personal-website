@@ -26,6 +26,10 @@ const getColorForLanguage = (language: string): string => {
     Go: "#00ADD8",
     C: "#555555",
     "C++": "#f34b7d",
+    Shell: "#89e051",
+    PHP: "#4F5D95",
+    Kotlin: "#800080",
+    
   };
   return colors[language] || "#cccccc";
 };
