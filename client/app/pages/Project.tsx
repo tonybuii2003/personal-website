@@ -34,7 +34,7 @@ const getColorForLanguage = (language: string): string => {
   return colors[language] || "#cccccc";
 };
 
-const pinnedRepos = ["SBUHacks2024", "WasteNoBites", "StudyBuddy", "Cinemania", "SELF-LEARN-PROGRAMMING"];
+const pinnedRepos = ["SBUHacks2024", "WasteNoBites", "Cinemania"];
 
 export const Project: React.FC = () => {
   const [repos, setRepos] = useState<Repo[]>([]);
