@@ -31,3 +31,8 @@ body {
     text-wrap: balance;
   }
 }
+@layer components {
+  .custom-swiper .swiper-pagination {
+    bottom: -20px !important;
+  }
+}
