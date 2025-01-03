@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import { FaReact, FaPython, FaCss3Alt, FaJsSquare, FaJava, FaNode, FaLinux, FaJenkins, FaAndroid, FaDocker } from "react-icons/fa";
-import { SiTypescript, SiKotlin, SiGnubash, SiMongodb, SiExpress, SiApache, SiFirebase, SiTailwindcss, SiPandas, SiScikitlearn, SiNumpy, SiPytorch, SiNeovim } from "react-icons/si";
+import { SiTypescript, SiKotlin, SiGnubash, SiMongodb, SiExpress, SiSpring, SiFirebase, SiTailwindcss, SiPandas, SiScikitlearn, SiNumpy, SiPytorch, SiNeovim } from "react-icons/si";
 import { AiFillCode } from "react-icons/ai";
 import { RiNextjsLine } from "react-icons/ri";
 import { GrMysql } from "react-icons/gr";
@@ -28,13 +28,13 @@ const techSkills: TechSkill[] = [
   { icon: <FaCss3Alt className="text-blue-700 text-xl" />, name: "CSS" },
   { icon: <FaReact className="text-blue-500 text-xl" />, name: "React.js" },
   { icon: <RiNextjsLine className="text-black text-xl" />, name: "Next.js" },
+  { icon: <SiTailwindcss className="text-blue-500 text-xl" />, name: "Tailwind CSS" },
   { icon: <FaNode className="text-green-700 text-xl" />, name: "Node.js" },
   { icon: <SiExpress className="text-black text-xl" />, name: "Express.js" },
-  { icon: <SiTailwindcss className="text-blue-500 text-xl" />, name: "Tailwind CSS" },
+  { icon: <SiSpring className="text-green-500 text-xl" />, name: "Spring Boot" },
+  { icon: <GrMysql className="text-blue-400 text-xl" />, name: "MySQL" },
   { icon: <SiMongodb className="text-green-500 text-xl" />, name: "MongoDB" },
   { icon: <SiFirebase className="text-yellow-600 text-xl" />, name: "Firebase" },
-  { icon: <GrMysql className="text-blue-400 text-xl" />, name: "MySQL" },
-  { icon: <SiApache className="text-red-600 text-xl" />, name: "Apache" },
   { icon: <FaLinux className="text-black text-xl" />, name: "Linux" },
   { icon: <FaJenkins className="text-red-800 text-xl" />, name: "Jenkins" },
   { icon: <FaDocker className="text-blue-500 text-xl" />, name: "Docker" },
