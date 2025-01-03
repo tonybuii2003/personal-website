@@ -42,7 +42,7 @@ const aboutBoxes = [
 
 export const About: React.FC = () => {
     return (
-        <div id="about-me" className="min-h-screen bg-[#FBFCFD] flex flex-col items-center justify-center md:pt-0 pt-5">
+        <div id="about-me" className="min-h-screen bg-[#FBFCFD] flex flex-col items-center justify-center md:pt-1 pt-5">
             <div className="container mx-auto px-4">
                 {/* Text Section and Boxes */}
                 <div className="flex flex-col md:flex-row items-center">
@@ -91,7 +91,7 @@ export const About: React.FC = () => {
                                 <div className="text-base font-semibold mb-2" style={{ color: box.introColor }}>
                                     {box.intro}
                                 </div>
-                                <h2 className="text-3xl font-bold mb-4" style={{ color: box.titleColor }}>
+                                <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: box.titleColor }}>
                                     {box.title}
                                 </h2>
                                 <p className="mb-6 text-center" style={{ color: box.descColor }}>

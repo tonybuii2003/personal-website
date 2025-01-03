@@ -40,17 +40,7 @@ export const Navbar: React.FC = () => {
   return (
     <nav className="flex justify-between items-center px-8 py-4 bg-[#FBFCFD]">
       <div className="flex items-center">
-        <Link href="/" passHref className="md:hidden">
-          <span className="flex items-center cursor-pointer ">
-            <Image
-              src={'/loqi.png'}
-              alt="logo"
-              width={60}
-              height={60}
-            />
-          </span>
-        </Link>
-        <ul className="flex gap-8 ml-8 font-medium text-[#5A666E]">
+        <ul className="flex gap-4 md:gap-8 ml-4 md:ml-8 font-sm md:font-medium text-[#5A666E]">
           {navLinks.map((link) => (
             <li key={link.id} className="relative group">
               <span

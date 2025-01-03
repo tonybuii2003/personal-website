@@ -1,4 +1,5 @@
 "use client";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -56,7 +57,19 @@ const chunkArray = <T,>(array: T[], chunkSize: number): T[][] => {
 };
 
 export const TechStack: React.FC = () => {
-  const techSkillChunks = chunkArray<TechSkill>(techSkills, 7);
+  const [chunkSize, setChunkSize] = useState(7);
+  const updateChunkSize = () => {
+    const width = window.innerWidth;
+    if (width >= 1024) setChunkSize(7); // Large screens
+    else if (width >= 768) setChunkSize(5); // Tablets
+    else setChunkSize(3); // Mobile
+  };
+  useEffect(() => {
+    updateChunkSize(); // Set initial chunk size
+    window.addEventListener("resize", updateChunkSize);
+    return () => window.removeEventListener("resize", updateChunkSize);
+  }, []);
+  const techSkillChunks = chunkArray<TechSkill>(techSkills, chunkSize);
 
   return (
     <div id="tech-stack" className="flex flex-col items-center justify-center w-full py-16 px-4 bg-blue-500 overflow-hidden">
