@@ -35,6 +35,7 @@ const getColorForLanguage = (language: string): string => {
 };
 
 const pinnedRepos = ["SBUHacks2024", "WasteNoBites", "Cinemania", "votifier", "loqi", "StudyBuddy"];
+const ignoredRepos = ["tonybuii2003", "HW7-CYOAPI-Part-3", "HW6_OwnAPIPart2", "HW1-HelloSquirrel", "HackMit21-Goat", "HW2-Debugathon", "HW5-OwnAPI", "CodeMath", "HelloWorldAND102", "HW3-AnimalsApp", "and102-lab4-starter", "and102-lab3-starter"];
 
 export const Project: React.FC = () => {
   const [repos, setRepos] = useState<Repo[]>([]);
@@ -53,7 +54,9 @@ export const Project: React.FC = () => {
           const data = await response.json();
       
           const enrichedRepos = await Promise.all(
-            data.map(async (repo: any) => {
+            data
+            .filter((repo: any) => !ignoredRepos.includes(repo.name))
+            .map(async (repo: any) => {
               // Fetch commit count for each repo
               const commitResponse = await fetch(
                 `https://api.github.com/repos/tonybuii2003/${repo.name}/commits?per_page=1`,
