@@ -3,6 +3,7 @@ import { Navbar } from "@/app/components/NavBar";
 import {About} from "@/app/pages/About";
 import {Project} from "@/app/pages/Project";
 import {TechStack} from "@/app/pages/TechStack";
+import {ProfessionalExperience} from "@/app/pages/Experience"
 export default function Home() {
   return (
     <div className="h-screen bg-radient-to-b bg-[#FBFCFD] overflow-auto no-scrollbar scroll-smooth">
@@ -11,6 +12,7 @@ export default function Home() {
       </div>
         <About />
         <TechStack />
+        <ProfessionalExperience/>
         <Project />
     </div>
   );

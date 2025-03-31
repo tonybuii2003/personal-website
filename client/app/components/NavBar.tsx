@@ -22,8 +22,9 @@ export const Navbar: React.FC = () => {
   const navLinks: NavLink[] = [
     { id: 'about-me', label: 'About Me' },
     {id: 'tech-stack', label: 'Technologies I Use'},
+    { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
-    // { id: 'journey', label: 'My Journey' },
+
   ];
 
   const scrollToSection = (id: string) => {
