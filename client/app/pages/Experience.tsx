@@ -105,7 +105,7 @@ export const ProfessionalExperience: React.FC = () => {
         id: 4,
         position: "Backend Developer",
         company: "Morgan Stanley's Code to Give Hackathon",
-        dateRange: "Spring 2023 - Spring 2023",
+        dateRange: "Spring 2023",
         tools: ["JavaScript", "Firebase", "Axios"],
         description: "Built a food bank admin system with virsualization",
         images: [
@@ -141,7 +141,7 @@ export const ProfessionalExperience: React.FC = () => {
       id: 7,
       position: "Participant - Frontend Developer",
       company: "HopperHack 2023: Winner - Best Community Hack",
-      dateRange: "Feb 2023 - Feb 2023",
+      dateRange: "Spring 2023",
       tools: ["React.js", "JavaScript", "Material UI"],
       description: "Create an web app that seek to help students on campus find other study partners by providing the option to either create an online virtual group or connect with other students on campus to study in-person.",
       images: [
@@ -153,7 +153,7 @@ export const ProfessionalExperience: React.FC = () => {
     id: 8,
     position: "Participant - Frontend Developer",
     company: "SBUHacks 2024",
-    dateRange: "Feb 2023 - Feb 2023",
+    dateRange: "Spring 2024",
     tools: ["React.js", "JavaScript", "Tailwind", "MongoDB", "OpenAI API"],
     description: "Created MindScribe to transform mental health with AI. Personalized companions for emotional support and growth, anytime. Choose your friend and elevate your journaling journey",
     images: [
@@ -165,7 +165,7 @@ export const ProfessionalExperience: React.FC = () => {
   id: 10,
   position: "Mentor",
   company: "HackNYU 2025 - First Hack Winner",
-  dateRange: "Feb 2025 - Feb 2025",
+  dateRange: "Spring 2025",
   tools: ["Mentorship"],
   description: "Helped a group of underclassmen win their first hackathon at HackNYU",
   images: [
@@ -177,7 +177,7 @@ export const ProfessionalExperience: React.FC = () => {
   id: 9,
   position: "Mentor",
   company: "HopperHacks 2025 - Best AI/ML",
-  dateRange: "Feb 2025 - Feb 2025",
+  dateRange: "Spring 2025",
   tools: ["Mentorship"],
   description: "Helped a group of underclassmen win their best AI/ML title at HopperHacks",
   images: [
