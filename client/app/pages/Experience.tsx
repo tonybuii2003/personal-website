@@ -154,7 +154,7 @@ export const ProfessionalExperience: React.FC = () => {
     position: "Participant - Frontend Developer",
     company: "SBUHacks 2024",
     dateRange: "Feb 2023 - Feb 2023",
-    tools: ["React.js", "JavaScript", "Material UI"],
+    tools: ["React.js", "JavaScript", "Tailwind", "MongoDB", "OpenAI API"],
     description: "Created MindScribe to transform mental health with AI. Personalized companions for emotional support and growth, anytime. Choose your friend and elevate your journaling journey",
     images: [
       "mindscribes.png",
