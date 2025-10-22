@@ -1,16 +1,13 @@
 "use client";
 import React, { useState } from "react";
+import { experienceNavItems } from "@/app/data/content";
 
 interface ExperienceNavbarProps {
   onSectionChange: (sectionId: string) => void;
 }
 
 export const ExperienceNavbar: React.FC<ExperienceNavbarProps> = ({ onSectionChange }) => {
-  const navItems = [
-    { id: "work-experience", label: "Work Experience" },
-    { id: "hackathons", label: "Hackathons" },
-    { id: "mentorship-leadership", label: "Mentorship/Leadership" },
-  ];
+  const navItems = experienceNavItems;
 
   const [activeItem, setActiveItem] = useState<string>("work-experience");
 

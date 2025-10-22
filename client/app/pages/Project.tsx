@@ -3,6 +3,13 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import {
+  githubOwner,
+  ignoredRepos,
+  languageColorMap,
+  pinnedRepos,
+  placeholderRepoImage,
+} from "@/app/data/content";
 
 interface Repo {
   id: number;
@@ -16,29 +23,11 @@ interface Repo {
 }
 
 const getColorForLanguage = (language: string): string => {
-  const colors: { [key: string]: string } = {
-    JavaScript: "#f1e05a",
-    Python: "#3572A5",
-    Ruby: "#701516",
-    Java: "#b07219",
-    CSS: "#563d7c",
-    HTML: "#e34c26",
-    TypeScript: "#2b7489",
-    Go: "#00ADD8",
-    C: "#555555",
-    "C++": "#f34b7d",
-    Shell: "#89e051",
-    PHP: "#4F5D95",
-    Kotlin: "#800080",
-    
-  };
-  return colors[language] || "#cccccc";
+  return languageColorMap[language] || "#cccccc";
 };
 
-const pinnedRepos = ["SBUHacks2024", "WasteNoBites", "Cinemania", "votifier", "loqi", "StudyBuddy"];
-const ignoredRepos = ["tonybuii2003", "HW7-CYOAPI-Part-3", "HW6_OwnAPIPart2", "HW1-HelloSquirrel", "HackMit21-Goat", "HW2-Debugathon", "HW5-OwnAPI", "CodeMath", "HelloWorldAND102", "HW3-AnimalsApp", "and102-lab4-starter", "and102-lab3-starter"];
-const owner = "tonybuii2003";
-const placeholderImage = "/next.svg";
+const owner = githubOwner;
+const placeholderImage = placeholderRepoImage;
 
 const buildFallbackRepos = (): Repo[] =>
   pinnedRepos.map((name, index) => ({

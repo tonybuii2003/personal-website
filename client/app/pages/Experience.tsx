@@ -4,19 +4,10 @@ import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import { ExperienceNavbar } from "../components/ExperienceNavbar";
+import { experiences as experienceEntries, ExperienceEntry } from "@/app/data/content";
 import "swiper/css";
 import "swiper/css/pagination";
 
-interface Experience {
-  id: number;
-  position: string;
-  company: string;
-  dateRange: string;
-  tools: string[];
-  description?: string;
-  images?: string[];
-  category: string;
-}
 const seasonMonthMap: Record<string, number> = {
   spring: 2, // March
   summer: 5, // June
@@ -62,143 +53,8 @@ function parseEndDate(dateRange: string): Date {
   return isNaN(parsedDate.getTime()) ? new Date() : parsedDate;
 }
 export const ProfessionalExperience: React.FC = () => {
-  // Example data. Replace with your own images and info.
   const [activeSection, setActiveSection] = useState<string>("work-experience");
-  const experiences: Experience[] = [
-    {
-      id: 1,
-      position: "Research Data Scientist",
-      company: "SUNY Research Foundation",
-      dateRange: "Aug 2024 – Present",
-      tools: ["Python","R", "Bash", "PyQt", "SPSS", "Jenkins", "Docker", "RedHat Linux", "RAPIDS"],
-      description: "Developing machine learning data analysis pipelines, automation applications and helped psychologists to gain deep behavioral insights",
-      images: [
-        "/suny_1.jpg",
-      ],
-      category: "work-experience"
-    },
-    {
-      id: 2,
-      position: "Software Engineering Internship",
-      company: "The World Well-Being Project",
-      dateRange: "Summer 2024",
-      tools: ["Python", "TypeScript", "Bash", "Pandas", "DLATK","AngularJS", "Flask", "MYSQL", "Linux"],
-      description: "Assisted NLP and PSY researchers by developing AngularJS and Android apps for data collection, integrating an ETL pipeline, preprocessed complex medical data, and maintained MYSQL and Jenkins CI/CD",
-      images: [
-        "/wwbp.png",
-      ],
-      category: "work-experience"
-    },
-    {
-      id: 3,
-      position: "Client Support Technician",
-      company: "Division of Information Technology",
-      dateRange: "Aug 2023 – May 2024",
-      tools: ["Powershell", "Windows"],
-      description: "Improved and maintained printer networks, facuty and student devices. Assisted students and facuty resolved software issues",
-      images: [
-        "/sbu_logo.webp",
-      ],
-      category: "work-experience"
-    },
-    {
-        id: 4,
-        position: "Backend Developer",
-        company: "Morgan Stanley's Code to Give Hackathon",
-        dateRange: "Spring 2023",
-        tools: ["JavaScript", "Firebase", "Axios"],
-        description: "Built a food bank admin system with virsualization",
-        images: [
-          "/hack-to-give.png",
-        ],
-        category: "hackathons"
-    },
-    {
-        id: 5,
-        position: "Research Assistant",
-        company: "Blockchain Business Lab",
-        dateRange: "Aug 2023 – May 2024",
-        tools: ["Python", "Pandas", "BeautifulSoup"],
-        description: "Build data pipelines for Blockchain market research",
-        images: [
-          "/bbl.jpg",
-        ],
-        category: "work-experience"
-    },
-    {
-        id: 6,
-        position: "Participant - ML Modeling",
-        company: "RoboTech",
-        dateRange: "Feb 2022 - Feb 2022",
-        tools: ["Python", "Pytorch", "OpenCV"],
-        description: "Created an bottle/can image detection model for smart trashcan built for RoboTech Hackathon",
-        images: [
-          "robotech.jpg", "robotech2.JPG",
-        ],
-        category: "hackathons"
-    },
-    {
-      id: 7,
-      position: "Participant - Frontend Developer",
-      company: "HopperHack 2023: Winner - Best Community Hack",
-      dateRange: "Spring 2023",
-      tools: ["React.js", "JavaScript", "Material UI"],
-      description: "Create an web app that seek to help students on campus find other study partners by providing the option to either create an online virtual group or connect with other students on campus to study in-person.",
-      images: [
-        "studybuddy.png",
-      ],
-      category: "hackathons"
-  },
-  {
-    id: 8,
-    position: "Participant - Frontend Developer",
-    company: "SBUHacks 2024",
-    dateRange: "Spring 2024",
-    tools: ["React.js", "JavaScript", "Tailwind", "MongoDB", "OpenAI API"],
-    description: "Created MindScribe to transform mental health with AI. Personalized companions for emotional support and growth, anytime. Choose your friend and elevate your journaling journey",
-    images: [
-      "mindscribes.png",
-    ],
-    category: "hackathons"
-},
-{
-  id: 10,
-  position: "Mentor",
-  company: "HackNYU 2025 - First Hack Winner",
-  dateRange: "Spring 2025",
-  tools: ["Mentorship"],
-  description: "Helped a group of underclassmen win their first hackathon at HackNYU",
-  images: [
-    "mentor-hacknyu.jpg", "mentor-hacknyu2.jpg",
-  ],
-  category: "mentorship-leadership"
-},
-{
-  id: 9,
-  position: "Mentor",
-  company: "HopperHacks 2025 - Best AI/ML",
-  dateRange: "Spring 2025",
-  tools: ["Mentorship"],
-  description: "Helped a group of underclassmen win their best AI/ML title at HopperHacks",
-  images: [
-    "mentor-hopperhack.jpeg", "mentor-hopperhack2.jpg",
-  ],
-  category: "mentorship-leadership"
-},
-{
-  id: 11,
-  position: "Computer Vision Lead",
-  company: "Stony Brook Robotics Team",
-  dateRange: "Oct 2021 - May 2022",
-  tools: ["Mentorship", "Python", "OpenCV"],
-  description: "Lead a team of 20 members connect and keeping track of their tasks",
-  images: [
-    "robotcv-lead.jpeg",
-  ],
-  category: "mentorship-leadership"
-},
-  ];
-  console.log(activeSection)
+  const experiences: ExperienceEntry[] = experienceEntries;
   const filteredExperiences = experiences.filter(
     (exp) => exp.category === activeSection
   );

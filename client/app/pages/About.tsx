@@ -1,44 +1,6 @@
-import Image from "next/image";
 import { motion } from "framer-motion";
 import {ProfileAndContact} from "@/app/components/ProfileAndContact";
-const aboutBoxes = [
-    {
-        intro: "I am a...",
-        title: "Mentor",
-        description: "I've been known to be the voice that rallies team members towards our shared goals",
-        bgColor: "#FFFAE3", // Light yellow
-        introColor: "#A89E2A", // Mid yellow
-        titleColor: "#7C6A00", // Dark yellow
-        descColor: "#A89E2A", // Light yellow
-    },
-    {
-        intro: "I am a...",
-        title: "Tech Enthusiast",
-        description: "I'm driven by my passion for technology and its ability to transform the world.",
-        bgColor: "#FFE3E3", // Light red
-        introColor: "#D9534F", // Mid red
-        titleColor: "#A83232", // Dark red
-        descColor: "#D9534F", // Light red
-    },
-    {
-        intro: "I am a...",
-        title: "Quick Learner",
-        description: "I'm highly adaptive to new environment. I love tackling complex challenges and finding innovative solutions, I can apply my past experiences to new problems.",
-        bgColor: "#E3F5FF", // Light blue
-        introColor: "#007ACC", // Mid blue
-        titleColor: "#005B99", // Dark blue
-        descColor: "#007ACC", // Light blue
-    },
-    {
-        intro: "I am a...",
-        title: "Entrepreneur",
-        description: "I'm on my journey to build a software company that will help people in need. Currently working on Loqi, A platform leverages the latest technology to enhance your studying experience with personalized and interactive learning tools",
-        bgColor: "#E3FFE3", // Light green
-        introColor: "#3C9A3C", // Mid green
-        titleColor: "#2A7A2A", // Dark green
-        descColor: "#3C9A3C", // Light green
-    },
-];
+import { aboutBoxes } from "@/app/data/content";
 
 export const About: React.FC = () => {
     return (

@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-
-interface NavLink {
-  id: string;
-  label: string;
-}
+import { navLinks } from '@/app/data/content';
 
 export const Navbar: React.FC = () => {
   const [mounted, setMounted] = useState(false);
@@ -18,14 +12,6 @@ export const Navbar: React.FC = () => {
       setCurrentPath(pathname);
     }
   }, [mounted]);
-
-  const navLinks: NavLink[] = [
-    { id: 'about-me', label: 'About Me' },
-    {id: 'tech-stack', label: 'Technologies I Use'},
-    { id: 'experience', label: 'Experience' },
-    { id: 'projects', label: 'Projects' },
-
-  ];
 
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
