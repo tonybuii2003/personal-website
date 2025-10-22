@@ -1,15 +1,20 @@
 import { IconType } from "react-icons";
-import { FaAndroid, FaCss3Alt, FaDocker, FaJava, FaJenkins, FaJsSquare, FaLinux, FaNode, FaPython, FaReact } from "react-icons/fa";
+import { FaAndroid, FaCss3Alt, FaDocker, FaJava, FaJenkins, FaJsSquare, FaLinux, FaNode, FaProjectDiagram, FaPython, FaReact } from "react-icons/fa";
 import { AiFillCode } from "react-icons/ai";
 import { GrMysql } from "react-icons/gr";
+import { GiSoundWaves } from "react-icons/gi";
 import {
   SiExpress,
+  SiFastapi,
   SiFirebase,
   SiGnubash,
+  SiGooglecloud,
   SiKotlin,
+  SiLangchain,
   SiMongodb,
   SiNeovim,
   SiNumpy,
+  SiOpenai,
   SiPandas,
   SiPytorch,
   SiScikitlearn,
@@ -118,11 +123,33 @@ export const experiences: ExperienceEntry[] = [
     id: 1,
     position: "Research Data Scientist",
     company: "SUNY Research Foundation",
-    dateRange: "Aug 2024 – Present",
+    dateRange: "Aug 2024 – May 2025",
     tools: ["Python", "R", "Bash", "PyQt", "SPSS", "Jenkins", "Docker", "RedHat Linux", "RAPIDS"],
     description:
       "Developing machine learning data analysis pipelines, automation applications and helped psychologists to gain deep behavioral insights",
     images: ["/suny_1.jpg"],
+    category: "work-experience",
+  },
+  {
+    id: 14,
+    position: "Research AI Software Engineer",
+    company: "Stanford HAI (Computational Psychology & Well-Being Lab)",
+    dateRange: "Jun 2025 – Present",
+    tools: ["Python", "PyTorch", "LangChain", "LangGraph", "FastAPI", "GCP", "OpenAI API", "ElevenLabs"],
+    description:
+      "Building evaluation-driven, human-centered NLP systems for mental health research, including RAG-enabled TherapyTrainer and cross-lab LLM safety evaluations.",
+    images: [],
+    category: "work-experience",
+  },
+  {
+    id: 13,
+    position: "Fullstack Software Engineer",
+    company: "Vanderbilt CCC / Human Language Analysis Beings",
+    dateRange: "Jul 2025 – Present",
+    tools: ["TypeScript", "Next.js", "Python", "FastAPI", "LangChain", "GCP", "Docker"],
+    description:
+      "Leading full-stack development for behavioral analytics pipelines and SemEval infrastructure, ensuring multilingual LLM evaluation workflows scale reliably.",
+    images: [],
     category: "work-experience",
   },
   {
@@ -179,6 +206,17 @@ export const experiences: ExperienceEntry[] = [
     category: "hackathons",
   },
   {
+    id: 15,
+    position: "Participant",
+    company: "HackMIT 2021 - ecoFit",
+    dateRange: "Sep 2021",
+    tools: ["Swift", "SwiftUI", "CoreLocation", "Firebase", "Figma"],
+    description:
+      "Developed ecoFit, an iOS app that rewards sustainable commuting by tracking activity, surfacing global challenges, and motivating users to bike, walk, or ride transit.",
+    images: [],
+    category: "hackathons",
+  },
+  {
     id: 7,
     position: "Participant - Frontend Developer",
     company: "HopperHack 2023: Winner - Best Community Hack",
@@ -187,6 +225,17 @@ export const experiences: ExperienceEntry[] = [
     description:
       "Create an web app that seek to help students on campus find other study partners by providing the option to either create an online virtual group or connect with other students on campus to study in-person.",
     images: ["studybuddy.png"],
+    category: "hackathons",
+  },
+  {
+    id: 12,
+    position: "Full Stack Engineer",
+    company: "UC Berkeley AI Hackathon - UpStarter",
+    dateRange: "Jun 2025",
+    tools: ["Next.js", "TypeScript", "LangChain", "RAG", "Supabase", "OpenAI API"],
+    description:
+      "Built UpStarter, an all-in-one cofounder-matching platform with recommendation agents and RAG-powered onboarding to pair founders by skills, interests, and availability.",
+    images: [],
     category: "hackathons",
   },
   {
@@ -249,8 +298,14 @@ export const techSkills: TechSkill[] = [
   { Icon: SiExpress, iconClassName: "text-black text-xl", name: "Express.js" },
   { Icon: SiSpring, iconClassName: "text-green-500 text-xl", name: "Spring Boot" },
   { Icon: GrMysql, iconClassName: "text-blue-400 text-xl", name: "MySQL" },
+  { Icon: SiLangchain, iconClassName: "text-purple-500 text-xl", name: "LangChain" },
+  { Icon: FaProjectDiagram, iconClassName: "text-teal-500 text-xl", name: "LangGraph" },
+  { Icon: GiSoundWaves, iconClassName: "text-pink-500 text-xl", name: "ElevenLabs" },
+  { Icon: SiOpenai, iconClassName: "text-emerald-500 text-xl", name: "OpenAI API" },
+  { Icon: SiFastapi, iconClassName: "text-emerald-600 text-xl", name: "FastAPI" },
   { Icon: SiMongodb, iconClassName: "text-green-500 text-xl", name: "MongoDB" },
   { Icon: SiFirebase, iconClassName: "text-yellow-600 text-xl", name: "Firebase" },
+  { Icon: SiGooglecloud, iconClassName: "text-blue-500 text-xl", name: "GCP" },
   { Icon: FaLinux, iconClassName: "text-black text-xl", name: "Linux" },
   { Icon: FaJenkins, iconClassName: "text-red-800 text-xl", name: "Jenkins" },
   { Icon: FaDocker, iconClassName: "text-blue-500 text-xl", name: "Docker" },
