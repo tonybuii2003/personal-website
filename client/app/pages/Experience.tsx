@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import { ExperienceNavbar } from "../components/ExperienceNavbar";
@@ -254,17 +255,19 @@ export const ProfessionalExperience: React.FC = () => {
               pagination={{ clickable: true }}
               className="w-full rounded-md overflow-hidden"
             >
-              {exp.images.map((imgSrc, i) => (
-                <SwiperSlide key={i}>
-                  <div className="h-72 w-full flex items-center justify-center bg-gray-50">
-                    <img
-                      src={imgSrc}
-                      alt={`${exp.position} - image ${i + 1}`}
-                      className="object-contain max-h-full"
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
+                                {exp.images.map((imgSrc, i) => (
+                                  <SwiperSlide key={i}>
+                                    <div className="relative h-72 w-full bg-gray-50">
+                                      <Image
+                                        src={imgSrc}
+                                        alt={`${exp.company} - image ${i + 1}`}
+                                        fill
+                                        className="object-contain"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 60vw, 40vw"
+                                      />
+                                    </div>
+                                  </SwiperSlide>
+                                ))}
             </Swiper>
           )}
         </div>
