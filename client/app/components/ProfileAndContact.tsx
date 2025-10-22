@@ -11,7 +11,7 @@ export const ProfileAndContact: React.FC = () => {
                 {/* Profile Image */}
                 <div>
                     <Image
-                        src="/profile.png"
+                        src="/profile.jpg"
                         alt="Profile Image"
                         width={175}
                         height={175}

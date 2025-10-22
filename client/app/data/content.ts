@@ -75,9 +75,9 @@ export const aboutBoxes: AboutBox[] = [
   },
   {
     intro: "I am a...",
-    title: "Tech Enthusiast",
+    title: "Innovator",
     description:
-      "I'm driven by my passion for technology and its ability to transform the world.",
+      "I'm endlessly curious about emerging technologies and the possibilities they unlock for people.",
     bgColor: "#FFE3E3",
     introColor: "#D9534F",
     titleColor: "#A83232",
@@ -97,7 +97,7 @@ export const aboutBoxes: AboutBox[] = [
     intro: "I am a...",
     title: "Entrepreneur",
     description:
-      "I'm on my journey to build a software company that will help people in need. Currently working on Loqi, A platform leverages the latest technology to enhance your studying experience with personalized and interactive learning tools",
+      "I'm building ventures that make technology more accessible and equitable for people who need it most, exploring new ideas across education, health, and community support.",
     bgColor: "#E3FFE3",
     introColor: "#3C9A3C",
     titleColor: "#2A7A2A",
