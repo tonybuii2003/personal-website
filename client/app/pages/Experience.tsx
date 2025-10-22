@@ -255,19 +255,22 @@ export const ProfessionalExperience: React.FC = () => {
               pagination={{ clickable: true }}
               className="w-full rounded-md overflow-hidden"
             >
-                                {exp.images.map((imgSrc, i) => (
-                                  <SwiperSlide key={i}>
-                                    <div className="relative h-72 w-full bg-gray-50">
-                                      <Image
-                                        src={imgSrc}
-                                        alt={`${exp.company} - image ${i + 1}`}
-                                        fill
-                                        className="object-contain"
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 60vw, 40vw"
-                                      />
-                                    </div>
-                                  </SwiperSlide>
-                                ))}
+              {exp.images.map((imgSrc, i) => {
+                const normalizedSrc = imgSrc.startsWith("/") ? imgSrc : `/${imgSrc}`;
+                return (
+                  <SwiperSlide key={i}>
+                    <div className="relative h-72 w-full bg-gray-50">
+                      <Image
+                        src={normalizedSrc}
+                        alt={`${exp.company} - image ${i + 1}`}
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 60vw, 40vw"
+                      />
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
             </Swiper>
           )}
         </div>
